@@ -12,11 +12,11 @@
   <header>
     <h1>Electronic Works Bureau</h1>
     <p class="tagline">Custom Boutique Electronics</p>
-   <nav>
-  <a href="{{ '/' | relative_url }}" class="{% if page.url == '/' %}active{% endif %}">HOME</a>
-  <a href="{{ '/about' | relative_url }}" class="{% if page.url == '/about' %}active{% endif %}">ABOUT</a>
-  <a href="{{ '/projects' | relative_url }}" class="{% if page.url == '/projects' %}active{% endif %}">PROJECTS</a>
-  <a href="{{ '/contact' | relative_url }}" class="{% if page.url == '/contact' %}active{% endif %}">CONTACT</a>
+<nav>
+  <a href="{{ '/' | relative_url }}" class="{% if page.path == 'index.md' %}active{% endif %}">HOME</a>
+  <a href="{{ '/about' | relative_url }}" class="{% if page.path == 'about.md' %}active{% endif %}">ABOUT</a>
+  <a href="{{ '/projects' | relative_url }}" class="{% if page.path == 'projects.md' %}active{% endif %}">PROJECTS</a>
+  <a href="{{ '/contact' | relative_url }}" class="{% if page.path == 'contact.md' %}active{% endif %}">CONTACT</a>
 </nav>
   </header>
 
