@@ -10,7 +10,7 @@ body {
   margin: 0;
 }
 
-/* Standard body links: blue/purple/red */
+/* Global body links: blue/purple/red */
 a {
   color: #0000ee;
   text-decoration: underline;
@@ -46,7 +46,7 @@ a:active {
   display: block;
 }
 
-/* Header and navigation layout */
+/* Header and nav layout */
 header {
   margin-bottom: 2rem;
 }
@@ -67,7 +67,7 @@ nav {
   margin-bottom: 2em;
 }
 
-/* Nav link as amber buttons */
+/* Nav buttons */
 nav a {
   color: #ffcc33;
   text-decoration: none;
@@ -89,17 +89,27 @@ nav a:focus {
   cursor: pointer;
 }
 
+/* Active nav button */
 nav a.active {
   background-color: #ffcc33;
   color: black;
   pointer-events: none;
 }
 
+/* Prevent visited state from messing up nav appearance */
 nav a:visited {
   color: #ffcc33;
+  background-color: transparent;
+  border: 1px solid #ffcc33;
 }
 
-/* ASCII logo styling */
+nav a.active:visited {
+  background-color: #ffcc33;
+  color: black;
+  border: 1px solid #ffcc33;
+}
+
+/* ASCII logo styling (if used) */
 .logo {
   font-size: 11px;
   line-height: 1;
@@ -109,7 +119,7 @@ nav a:visited {
   overflow-x: auto;
 }
 
-/* Footer style */
+/* Footer */
 footer {
   margin-top: 3em;
   border-top: 1px dashed #ffcc33;
@@ -119,7 +129,7 @@ footer {
   text-align: center;
 }
 
-/* Specific constraint for staff directory images */
+/* Specific constraint for staff directory photos */
 .directory-photo {
   max-width: 500px;
   max-height: 500px;
