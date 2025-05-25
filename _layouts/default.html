@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} – Electronic Works Bureau</title>
+  {% include head.html %}
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1>Electronic Works Bureau</h1>
+    <p class="tagline">Custom Boutique Electronics</p>
+    <nav>
+      <a href="{{ '/' | relative_url }}">HOME</a>
+      <a href="{{ '/about' | relative_url }}">ABOUT</a>
+      <a href="{{ '/projects' | relative_url }}">PROJECTS</a>
+      <a href="{{ '/contact' | relative_url }}">CONTACT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>

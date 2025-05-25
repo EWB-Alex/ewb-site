@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Electronic Works Bureau</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <a href="#main" class="skip-link">Skip to main content</a>
+---
+layout: default
+title: Home
+---
 
-  <header>
-    <pre class="logo" aria-label="Logo: Electronic Works Bureau (EWB)">
+<pre class="logo" aria-label="Logo: Electronic Works Bureau (EWB)">
+
+
 ███████╗██╗     ███████╗ ██████╗████████╗██████╗  ██████╗ ███╗   ██╗██╗ ██████╗
 ██╔════╝██║     ██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██║██╔════╝
 █████╗  ██║     █████╗  ██║        ██║   ██████╔╝██║   ██║██╔██╗ ██║██║██║     
@@ -28,19 +23,7 @@
 ██████╔╝██║   ██║██████╔╝█████╗  ███████║██║   ██║                             
 ██╔══██╗██║   ██║██╔══██╗██╔══╝  ██╔══██║██║   ██║                             
 ██████╔╝╚██████╔╝██║  ██║███████╗██║  ██║╚██████╔╝                             
-╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝                              
-    </pre>
-    <h1>Electronic Works Bureau</h1>
-    <p class="tagline">Custom Boutique Electronics</p>
-    <nav>
-      <a href="about.html">ABOUT</a>
-      <a href="projects.html">PROJECTS</a>
-      <a href="contact.html">CONTACT</a>
-    </nav>
-  </header>
+╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝                                                    
+                                                                               
 
-  <main id="main">
-    <p>Welcome to the Bureau.</p>
-  </main>
-</body>
-</html>
+</pre>
