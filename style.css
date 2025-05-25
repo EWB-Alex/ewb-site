@@ -3,24 +3,29 @@
 body {
   background-color: black;
   color: #ffcc33;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
   font-size: 18px;
   line-height: 1.6;
   padding: 20px;
   margin: 0;
 }
 
+/* Standard body links: blue/purple/red */
 a {
-  color: #ffcc33;
-  text-decoration: none;
-  font-weight: bold;
+  color: #0000ee;
+  text-decoration: underline;
 }
 
-a:focus {
-  outline: 2px dashed #ffcc33;
-  outline-offset: 2px;
+a:visited {
+  color: #551a8b;
 }
 
+a:hover,
+a:active {
+  color: #ff0000;
+}
+
+/* Accessibility skip link */
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -41,17 +46,9 @@ a:focus {
   display: block;
 }
 
+/* Header and navigation layout */
 header {
   margin-bottom: 2rem;
-}
-
-.logo {
-  font-size: 11px;
-  line-height: 1;
-  color: #ffcc33;
-  margin-bottom: 2em;
-  white-space: pre;
-  overflow-x: auto;
 }
 
 h1 {
@@ -70,14 +67,55 @@ nav {
   margin-bottom: 2em;
 }
 
+/* Nav link as amber buttons */
 nav a {
-  margin-right: 1.5em;
+  color: #ffcc33;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #ffcc33;
+  padding: 4px 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-main {
-  max-width: 800px;
+nav a:hover,
+nav a:focus {
+  background-color: #ffcc33;
+  color: black;
+  cursor: pointer;
 }
 
+nav a.active {
+  background-color: #ffcc33;
+  color: black;
+  pointer-events: none;
+}
+
+/* ASCII logo styling */
+.logo {
+  font-size: 11px;
+  line-height: 1;
+  color: #ffcc33;
+  margin-bottom: 2em;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Footer style */
+footer {
+  margin-top: 3em;
+  border-top: 1px dashed #ffcc33;
+  padding-top: 1em;
+  font-size: 0.9em;
+  color: #ffcc33;
+  text-align: center;
+}
+
+/* Specific constraint for staff directory images */
 .directory-photo {
   max-width: 500px;
   max-height: 500px;
@@ -86,18 +124,3 @@ main {
   display: block;
   margin: 1em 0;
 }
-/* Classic link styles */
-a {
-  color: #0000ee;              /* Unvisited link: blue */
-  text-decoration: underline;
-}
-
-a:visited {
-  color: #551a8b;              /* Visited link: purple */
-}
-
-a:hover,
-a:active {
-  color: #ff0000;              /* Hover/active: red */
-}
-
