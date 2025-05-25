@@ -95,6 +95,10 @@ nav a.active {
   pointer-events: none;
 }
 
+nav a:visited {
+  color: #ffcc33;
+}
+
 /* ASCII logo styling */
 .logo {
   font-size: 11px;
