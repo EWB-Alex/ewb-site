@@ -86,4 +86,18 @@ main {
   display: block;
   margin: 1em 0;
 }
+/* Classic link styles */
+a {
+  color: #0000ee;              /* Unvisited link: blue */
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551a8b;              /* Visited link: purple */
+}
+
+a:hover,
+a:active {
+  color: #ff0000;              /* Hover/active: red */
+}
 
