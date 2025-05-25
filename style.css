@@ -1,74 +1,8 @@
-/* Soviet/Brutalist/90s Aesthetic */
-
 body {
-  background-color: #fdfdfd;
-  color: #111;
-  font-family: "Courier New", Courier, monospace;
-  margin: 0 auto;
-  max-width: 800px;
+  background-color: black;
+  color: #ffaa00; /* amber orange CRT tone */
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
   padding: 20px;
-  border-left: 5px solid red;
-  border-right: 5px solid red;
-}
-
-header {
-  text-align: center;
-  border-bottom: 2px solid black;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin: 0.2em 0;
-  color: red;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.tagline {
-  font-size: 1.1em;
-  color: #444;
-  margin-bottom: 10px;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 10px 0;
-  border-top: 1px dashed #000;
-  border-bottom: 1px dashed #000;
-  background-color: #eee;
-  font-weight: bold;
-}
-
-nav a {
-  color: black;
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-}
-
-nav a:hover {
-  border-bottom: 2px solid red;
-}
-
-main {
-  padding-top: 20px;
-}
-
-h2 {
-  border-bottom: 2px solid red;
-  padding-bottom: 5px;
-  margin-top: 30px;
-  text-transform: uppercase;
-  font-size: 1.3em;
-}
-
-footer {
-  margin-top: 40px;
-  padding-top: 10px;
-  border-top: 2px solid black;
-  text-align: center;
-  font-size: 0.9em;
-  color: #666;
+  white-space: pre;
 }
