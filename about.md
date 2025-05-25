@@ -13,12 +13,12 @@ The EWB-Cascadia facility is located in beautiful western Washington.
 
 ### General Director
 
-![Alex Sorrels]({{ '/assets/img/alex.jpg' | relative_url }})
+<img src="{{ '/assets/img/alex.jpg' | relative_url }}" alt="Alex Sorrels" class="directory-photo" />
 
 Alex Sorrels
 
 ### Junior Lab Technician
 
-![Winston Perdew-Sorrels]({{ '/assets/img/winston.jpg' | relative_url }})
+<img src="{{ '/assets/img/winston.jpg' | relative_url }}" alt="Winston Perdew-Sorrels, the dog" class="directory-photo" />
 
 Winston Perdew-Sorrels
