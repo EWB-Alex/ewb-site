@@ -3,4 +3,6 @@ layout: default
 title: Home
 ---
 
-Site under construction!
+## Welcome!
+We're still getting the site up and running, check back later!
+- Winston, Junuior Tech.
