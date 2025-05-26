@@ -3,11 +3,8 @@ layout: default
 title: About
 ---
 
-EWB is a small electronics shop focused on making fun and/or functional devices. Custom commissions are currently closed.
+EWB is a small electronics shop in Western Washington focused on making bespoke fun and/or functional devices. Custom commissions are currently closed.
 
-## Location
-
-The EWB-Cascadia facility is located in beautiful western Washington.
 
 ## Staff
 
