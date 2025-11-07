@@ -14,7 +14,7 @@ EWB is a small electronics shop in Western Washington focused on making bespoke 
 
 Alex Sorrels
 
-### Junior Lab Technician
+### Assistant Director, Security
 
 <img src="{{ '/assets/img/winston.jpg' | relative_url }}" alt="Winston Perdew-Sorrels, the dog" class="directory-photo" />
 
