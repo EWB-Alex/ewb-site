@@ -11,5 +11,5 @@ Alex Sorrels
 <img src="{{ '/assets/img/winston.jpg' | relative_url }}" alt="Winston Perdew-Sorrels, the dog" class="directory-photo" />
 Winston Perdew-Sorrels
 ### Junior Director, Facilities
-<img src="{{ '/assets/img/frizzy.jpeg' | relative_url }}" alt="Frizzy Perdew-Sorrels" class="directory-photo" />
+<img src="{{ '/assets/img/frizzy.jpg' | relative_url }}" alt="Frizzy Perdew-Sorrels" class="directory-photo" />
 Frizzy Perdew-Sorrels
