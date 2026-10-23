@@ -1,3 +1,5 @@
-<footer>
-  <p>Copyright © 2026</p>
+<footer class="site-footer">
+  <p>Questions? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  <p>Commissions: {% if site.commissions_open %}<a href="{{ '/commissions' | relative_url }}">open</a>{% else %}<a href="{{ '/commissions' | relative_url }}">closed</a>{% endif %} · <a href="{{ '/shop' | relative_url }}">Shop</a> · <a href="{{ '/contact' | relative_url }}">Contact</a></p>
+  <p>Copyright © {{ site.time | date: "%Y" }} Electronic Works Bureau</p>
 </footer>

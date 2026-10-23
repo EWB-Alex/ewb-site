@@ -1,0 +1,4 @@
+{% comment %}
+  Pre-filled email button.
+  Usage: {% include email-link.html label="Ask a question" subject="Question" body=some_captured_text class="btn" %}
+{% endcomment %}{% assign _subject = include.subject | default: "Hello" | url_encode | replace: "+", "%20" %}{% assign _body = include.body | default: "" | url_encode | replace: "+", "%20" %}<a class="{{ include.class | default: 'btn' }}" href="mailto:{{ site.email }}?subject={{ _subject }}{% if include.body %}&amp;body={{ _body }}{% endif %}">{{ include.label }}</a>
