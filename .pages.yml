@@ -1,0 +1,234 @@
+# Pages CMS configuration (https://pagescms.org)
+# Log in at https://app.pagescms.org with GitHub and open this repo.
+
+media:
+  input: assets/img
+  output: /assets/img
+
+components:
+  title:
+    type: string
+    label: Page title
+    required: true
+  description:
+    type: string
+    label: Search engine description
+    description: One sentence shown in Google results. Optional.
+  layout:
+    type: string
+    hidden: true
+  body:
+    type: rich-text
+    label: Page text
+
+content:
+  # ---------------- Pages ----------------
+  - name: home
+    label: "Page: Home"
+    type: file
+    path: index.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - name: welcome_heading
+        label: Welcome box heading
+        type: string
+      - name: intro
+        label: Welcome box text
+        type: text
+      - name: body
+        component: body
+        description: Optional. Appears below "Shop by Department".
+
+  - name: shop-page
+    label: "Page: Shop"
+    type: file
+    path: shop.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - { name: description, component: description }
+      - name: intro
+        label: Intro (above the product listings)
+        type: text
+      - name: body
+        component: body
+        description: Appears below the product listings.
+
+  - name: commissions-page
+    label: "Page: Commissions"
+    type: file
+    path: commissions.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - { name: description, component: description }
+      - name: body
+        component: body
+        description: The status box shows above this and the inquiry button below it automatically.
+
+  - name: projects-page
+    label: "Page: Projects"
+    type: file
+    path: projects.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - name: under_construction
+        label: Show "Under Construction" banner
+        type: boolean
+      - { name: body, component: body }
+
+  - name: about-page
+    label: "Page: About"
+    type: file
+    path: about.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - { name: description, component: description }
+      - name: body
+        component: body
+        description: The staff directory shows below this automatically (edit it under Staff).
+
+  - name: contact-page
+    label: "Page: Contact"
+    type: file
+    path: contact.md
+    format: yaml-frontmatter
+    fields:
+      - { name: title, component: title }
+      - { name: layout, component: layout }
+      - { name: description, component: description }
+      - name: body
+        component: body
+        description: The email address and pre-filled email buttons show below this automatically.
+
+  # ---------------- Shop items ----------------
+  - name: shop-items
+    label: Shop items
+    type: file
+    path: _data/shop.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        label: Item name
+        type: string
+        required: true
+      - name: price
+        label: Price
+        type: string
+        description: As shown, e.g. $45.00 or From $30
+      - name: status
+        label: Status
+        type: select
+        options:
+          values: [available, coming-soon, sold-out]
+      - name: featured
+        label: Feature on Home page
+        type: boolean
+      - name: new
+        label: Show NEW! burst
+        type: boolean
+      - name: image
+        label: Photo
+        type: image
+      - name: alt
+        label: Photo description (for screen readers)
+        type: string
+      - name: summary
+        label: Short description
+        type: text
+      - name: details
+        label: Bullet points
+        type: string
+        list: true
+      - name: buy_url
+        label: Checkout link
+        type: string
+        description: Stripe Payment Link or similar. Leave blank to show "Email to Order".
+
+  # ---------------- Sidebar boxes ----------------
+  - name: spotlight
+    label: Sidebar boxes
+    type: file
+    path: _data/spotlight.yml
+    format: yaml
+    list: true
+    fields:
+      - name: type
+        label: Box type
+        type: select
+        options:
+          values: [countdown, text, counter]
+      - name: title
+        label: Box heading
+        type: string
+      - name: date
+        label: "Countdown: target date and time"
+        type: string
+        description: 'Format 2026-12-03T12:00:00-08:00 (use -08:00 Nov to mid-Mar, -07:00 mid-Mar to Nov)'
+      - name: caption
+        label: "Countdown: text under the clock"
+        type: string
+      - name: done_text
+        label: "Countdown: text when it hits zero"
+        type: string
+      - name: name
+        label: "Text box: bold name"
+        type: string
+      - name: url
+        label: Link (countdown caption or text box name)
+        type: string
+      - name: text
+        label: "Text box: sentence"
+        type: string
+      - name: above
+        label: "Counter: text above"
+        type: string
+      - name: digits
+        label: "Counter: digits"
+        type: string
+      - name: below
+        label: "Counter: text below"
+        type: string
+
+  # ---------------- Staff ----------------
+  - name: staff
+    label: Staff
+    type: file
+    path: _data/staff.yml
+    format: yaml
+    list: true
+    fields:
+      - name: name
+        type: string
+        required: true
+      - name: role
+        type: string
+      - name: photo
+        type: image
+      - name: alt
+        label: Photo description (for screen readers)
+        type: string
+
+  # ---------------- Settings ----------------
+  - name: settings
+    label: Site settings
+    type: file
+    path: _data/settings.yml
+    format: yaml
+    fields:
+      - name: email
+        label: Inquiry email
+        type: string
+      - name: commissions_open
+        label: Commissions are open
+        type: boolean
+      - name: commissions_note
