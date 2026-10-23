@@ -1,0 +1,11 @@
+# Site settings. Editable in Pages CMS under "Site settings".
+email: alex@electronicworksbureau.com
+commissions_open: false
+commissions_note: ""
+reply_time: within a few days
+ticker:
+  - Welcome to Electronic Works Bureau!
+  - Commissions open December 3 at noon
+  - 10% of all proceeds go to The Trevor Project
+  - Handmade in Western Washington
+  - Thanks for stopping by!

@@ -1,17 +1,17 @@
 {% comment %}
-  Scrolling announcement ticker. Lines come from "ticker" in _config.yml.
+  Scrolling announcement ticker. Lines come from "ticker" in _data/settings.yml.
   Has a pause button, pauses on hover/focus, and stays still for
   visitors who have reduced motion turned on.
 {% endcomment %}
-{% if site.ticker and site.ticker.size > 0 %}
+{% if site.data.settings.ticker and site.data.settings.ticker.size > 0 %}
 <div class="ticker" id="ticker">
   <div class="ticker-window">
     <div class="ticker-track">
       <ul class="ticker-list" aria-label="Announcements">
-        {% for line in site.ticker %}<li><span class="star" aria-hidden="true">&#9733;</span> {{ line }}</li>{% endfor %}
+        {% for line in site.data.settings.ticker %}<li><span class="star" aria-hidden="true">&#9733;</span> {{ line }}</li>{% endfor %}
       </ul>
       <ul class="ticker-list" aria-hidden="true">
-        {% for line in site.ticker %}<li><span class="star">&#9733;</span> {{ line }}</li>{% endfor %}
+        {% for line in site.data.settings.ticker %}<li><span class="star">&#9733;</span> {{ line }}</li>{% endfor %}
       </ul>
     </div>
   </div>

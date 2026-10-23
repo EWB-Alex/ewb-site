@@ -1,9 +1,9 @@
 {% comment %}
   Commission status box. Controlled by commissions_open and
-  commissions_note in _config.yml.
+  commissions_note in _data/settings.yml.
 {% endcomment %}
-<div class="notice {% if site.commissions_open %}notice-open{% else %}notice-closed{% endif %}">
-<p class="notice-line"><span class="led" aria-hidden="true"></span> Commissions are <strong>{% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</strong></p>
-{% if site.commissions_note != "" %}<p class="notice-note">{{ site.commissions_note }}</p>{% endif %}
-{% unless include.no_link %}<p class="notice-link"><a href="{{ '/commissions' | relative_url }}">{% if site.commissions_open %}How commissions work &raquo;{% else %}Get notified when they open &raquo;{% endif %}</a></p>{% endunless %}
+<div class="notice {% if site.data.settings.commissions_open %}notice-open{% else %}notice-closed{% endif %}">
+<p class="notice-line"><span class="led" aria-hidden="true"></span> Commissions are <strong>{% if site.data.settings.commissions_open %}OPEN{% else %}CLOSED{% endif %}</strong></p>
+{% assign note = site.data.settings.commissions_note | strip %}{% if note != "" %}<p class="notice-note">{{ note }}</p>{% endif %}
+{% unless include.no_link %}<p class="notice-link"><a href="{{ '/commissions' | relative_url }}">{% if site.data.settings.commissions_open %}How commissions work &raquo;{% else %}Get notified when they open &raquo;{% endif %}</a></p>{% endunless %}
 </div>

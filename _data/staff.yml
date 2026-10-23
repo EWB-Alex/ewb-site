@@ -1,0 +1,13 @@
+# Staff directory on the About page. Editable in Pages CMS under "Staff".
+- name: Alex Sorrels
+  role: General Director
+  photo: /assets/img/alex.jpg
+  alt: Alex Sorrels
+- name: Winston Perdew-Sorrels
+  role: Assistant Director, Security
+  photo: /assets/img/winston.jpg
+  alt: Winston Perdew-Sorrels, the dog
+- name: Frizzy Perdew-Sorrels
+  role: Junior Director, Facilities
+  photo: /assets/img/frizzy.jpg
+  alt: Frizzy Perdew-Sorrels, the cat

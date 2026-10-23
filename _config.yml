@@ -3,28 +3,12 @@ description: Custom Boutique Electronics
 baseurl: "" # for root site
 url: "https://electronicworksbureau.com"
 
-# ------------------------------------------------------------
-# SITE SETTINGS: change these and every page updates
-# ------------------------------------------------------------
+# Day-to-day settings (email, commissions switch, ticker) live in
+# _data/settings.yml so they can be edited in Pages CMS.
 
-# Where all inquiry buttons send email
-email: alex@electronicworksbureau.com
-
-# Commissions switch: true = open, false = closed
-commissions_open: false
-
-# Optional one-line note shown with the commission status
-# e.g. "Booking for January 2027" or "Reopening in spring"
-commissions_note: ""
-
-# Typical reply time shown on the Contact page
-reply_time: "within a few days"
-
-# Scrolling announcement ticker under the tabs.
-# Add, remove, or reorder lines. Delete them all to hide the ticker.
-ticker:
-  - "Welcome to Electronic Works Bureau!"
-  - "Commissions open December 3 at noon"
-  - "10% of all proceeds go to The Trevor Project"
-  - "Handmade in Western Washington"
-  - "Thanks for stopping by!"
+# Every page uses the site layout by default
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

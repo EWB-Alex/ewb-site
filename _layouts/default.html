@@ -21,7 +21,7 @@
 
     <div class="topbar">
       <p>Welcome to <strong>Electronic Works Bureau</strong>! Handmade electronics from Western Washington.</p>
-      <p class="topbar-links"><span class="bookmark-tip">Press <kbd>Ctrl</kbd>+<kbd>D</kbd> to bookmark us!</span> <a href="{{ '/contact' | relative_url }}">Contact Us</a> | <a href="{{ '/commissions' | relative_url }}">Commissions: {% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</a> <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false"><span class="led" aria-hidden="true"></span>Dark mode</button></p>
+      <p class="topbar-links"><span class="bookmark-tip">Press <kbd>Ctrl</kbd>+<kbd>D</kbd> to bookmark us!</span> <a href="{{ '/contact' | relative_url }}">Contact Us</a> | <a href="{{ '/commissions' | relative_url }}">Commissions: {% if site.data.settings.commissions_open %}OPEN{% else %}CLOSED{% endif %}</a> <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false"><span class="led" aria-hidden="true"></span>Dark mode</button></p>
     </div>
     <script>
       (function () {
@@ -78,7 +78,11 @@
         {% unless page.path == 'index.md' %}
         <h1 class="page-title">{{ page.title }}</h1>
         {% endunless %}
+        {% include page-widgets.html slot="before" %}
+        <div class="page-text">
         {{ content }}
+        </div>
+        {% include page-widgets.html slot="after" %}
       </main>
 
       {% include sidebar.html %}

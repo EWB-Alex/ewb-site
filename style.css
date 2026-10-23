@@ -1452,3 +1452,16 @@ main h2:not(.product-name)::before {
     text-shadow: 1px 1px 0 #146b30, 2px 2px 0 #0b421d, 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 }
+
+/* Numbered lists in page text (e.g. "How it works") */
+.page-text ol {
+  padding-left: 1.6em;
+}
+
+.page-text ol li {
+  margin-bottom: 8px;
+}
+
+.page-text:empty {
+  display: none;
+}

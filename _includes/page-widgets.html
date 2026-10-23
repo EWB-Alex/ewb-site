@@ -1,0 +1,125 @@
+{% comment %}
+  The built-in pieces of each page (shop listings, status boxes, email
+  buttons, staff directory). These sit before or after the page text you
+  write, so the text itself stays plain and safe to edit in Pages CMS.
+  Called from the layout with slot="before" or slot="after".
+{% endcomment %}
+{% assign s = site.data.settings %}
+
+{% case page.path %}
+
+{% when "index.md" %}
+{% if include.slot == "before" %}
+<div class="welcome">
+<p class="welcome-kicker">{{ page.welcome_heading | default: "Welcome to the Bureau!" }}</p>
+{{ page.intro | markdownify }}
+</div>
+{% include commission-status.html %}
+<h2>This Week&rsquo;s Featured Items</h2>
+{% include shop-grid.html featured=true heading="h3" %}
+<p class="see-all"><a href="{{ '/shop' | relative_url }}">See all items in the Shop &raquo;</a></p>
+<h2>Shop by Department</h2>
+<ul class="departments">
+<li><a href="{{ '/shop' | relative_url }}"><strong>Ready to Ship</strong><span>Finished devices, built and tested.</span></a></li>
+<li><a href="{{ '/commissions' | relative_url }}"><strong>Commissions</strong><span>Have an idea? Get it made for you.</span></a></li>
+<li><a href="{{ '/projects' | relative_url }}"><strong>Projects</strong><span>Past builds and works in progress.</span></a></li>
+</ul>
+{% endif %}
+
+{% when "shop.md" %}
+{% if include.slot == "before" %}
+{{ page.intro | markdownify }}
+{% include shop-grid.html %}
+{% endif %}
+
+{% when "commissions.md" %}
+{% if include.slot == "before" %}
+{% include commission-status.html no_link=true %}
+{% else %}
+{% if s.commissions_open %}
+{% capture b %}Hi Alex,
+
+What I'd like made:
+
+Size / look / where it will live:
+
+Budget range:
+
+Ideal timeline:
+
+Anything else:
+
+{% endcapture %}
+<p class="cta">{% include email-link.html label="Start a commission inquiry" subject="Commission inquiry" body=b class="btn btn-gold" %}</p>
+{% else %}
+{% capture b %}Hi Alex,
+
+Please let me know when commissions open again. Here's what I'm thinking about (optional):
+
+{% endcapture %}
+<p>Commissions are closed right now, but you can still reach out. We'll let you know when spots open up.</p>
+<p class="cta">{% include email-link.html label="Notify me when commissions open" subject="Commission waitlist" body=b class="btn btn-gold" %}</p>
+{% endif %}
+<p class="small">Prefer to type it yourself? Email <a href="mailto:{{ s.email }}">{{ s.email }}</a>.</p>
+{% endif %}
+
+{% when "projects.md" %}
+{% if include.slot == "before" %}
+{% if page.under_construction %}
+<div class="under-construction">
+<p><strong>Under Construction!</strong> Project write-ups are on the way. Check back soon.</p>
+</div>
+{% endif %}
+{% else %}
+{% include commission-status.html %}
+{% endif %}
+
+{% when "about.md" %}
+{% if include.slot == "after" %}
+{% include commission-status.html %}
+<h2>Staff</h2>
+<ul class="staff-list">
+{% for person in site.data.staff %}
+<li class="staff">
+{% if person.photo and person.photo != "" %}<img src="{{ person.photo | relative_url }}" alt="{{ person.alt | default: person.name }}" class="directory-photo" />{% endif %}
+<h3>{{ person.name }}</h3>
+<p class="staff-role">{{ person.role }}</p>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+{% when "contact.md" %}
+{% if include.slot == "after" %}
+<p class="email-big"><a href="mailto:{{ s.email }}">{{ s.email }}</a></p>
+<p>We usually reply {{ s.reply_time }}.</p>
+<h2>Start an email</h2>
+<p>Pick one and your email app opens with a few prompts filled in.</p>
+{% capture b_order %}Hi Alex,
+
+Order or item name:
+
+My question:
+
+{% endcapture %}
+{% capture b_comm %}Hi Alex,
+
+What I'd like made:
+
+Budget range:
+
+Ideal timeline:
+
+{% endcapture %}
+{% capture b_gen %}Hi Alex,
+
+{% endcapture %}
+<ul class="button-list">
+<li>{% include email-link.html label="Question about an order or item" subject="Order question" body=b_order %}</li>
+<li>{% include email-link.html label="Commission inquiry" subject="Commission inquiry" body=b_comm %}</li>
+<li>{% include email-link.html label="Something else" subject="Hello" body=b_gen %}</li>
+</ul>
+{% include commission-status.html %}
+{% endif %}
+
+{% endcase %}
