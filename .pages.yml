@@ -219,6 +219,7 @@ content:
         type: string
 
   # ---------------- Settings ----------------
+    # ---------------- Settings ----------------
   - name: settings
     label: Site settings
     type: file
@@ -232,3 +233,14 @@ content:
         label: Commissions are open
         type: boolean
       - name: commissions_note
+        label: Commission note
+        type: string
+        description: Optional one-liner shown with the status, e.g. "Booking for January"
+      - name: reply_time
+        label: Typical reply time
+        type: string
+        description: Finishes the sentence "We usually reply ..."
+      - name: ticker
+        label: Scrolling ticker lines
+        type: string
+        list: true
