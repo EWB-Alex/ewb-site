@@ -1,0 +1,19 @@
+# Top navigation. Order here = order on the site.
+- label: HOME
+  url: /
+  path: index.md
+- label: SHOP
+  url: /shop
+  path: shop.md
+- label: COMMISSIONS
+  url: /commissions
+  path: commissions.md
+- label: PROJECTS
+  url: /projects
+  path: projects.md
+- label: ABOUT
+  url: /about
+  path: about.md
+- label: CONTACT
+  url: /contact
+  path: contact.md

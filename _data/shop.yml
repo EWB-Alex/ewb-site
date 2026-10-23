@@ -1,0 +1,47 @@
+# ------------------------------------------------------------
+# SHOP ITEMS
+# Add one block per item. The Shop page builds itself from this.
+#
+# Fields:
+#   name:     Item name (required)
+#   price:    Text shown as the price, e.g. "$45" or "From $30"
+#   status:   available | sold-out | coming-soon
+#   image:    Path to a photo in assets/img/shop/ (optional)
+#   alt:      Description of the photo for screen readers
+#   summary:  One or two sentences about the item
+#   details:  Short bullet list (optional)
+#   buy_url:  A checkout link (Stripe Payment Link, Etsy, etc.)
+#             Leave blank and the button becomes "Email to order"
+#
+# Delete the example items below when you add real ones.
+# ------------------------------------------------------------
+
+- name: Example Item One
+  price: "$45"
+  status: available
+  image: ""
+  alt: ""
+  summary: "Replace this with a short, friendly description of what it is and why someone would want it."
+  details:
+    - "What's in the box"
+    - "How it's powered"
+    - "Ships in about a week"
+  buy_url: ""
+
+- name: Example Item Two
+  price: "$120"
+  status: coming-soon
+  image: ""
+  alt: ""
+  summary: "Something you're still finishing. Visitors can email to get on the waitlist."
+  details: []
+  buy_url: ""
+
+- name: Example Item Three
+  price: "$30"
+  status: sold-out
+  image: ""
+  alt: ""
+  summary: "A one-off that already found a home. Keeping sold items up shows what you make."
+  details: []
+  buy_url: ""
