@@ -13,7 +13,7 @@ Small-batch devices, built and tested by hand. When something sells out, it may 
 
 <!-- EDIT: Adjust these to match how you actually handle orders. -->
 
-**Paying:** Items with a **Buy now** button go to a secure checkout. For items marked **Email to order**, send a quick email and you'll get a payment link back.
+**Paying:** Items with a **Buy Now** button go to a secure checkout. For items marked **Email to Order**, send a quick email and you'll get a payment link back.
 
 **Shipping:** Orders ship from Western Washington, usually within a week. You'll get tracking by email.
 

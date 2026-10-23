@@ -1,0 +1,35 @@
+<aside class="sidebar" aria-label="Store info">
+
+  <section class="box">
+    <h2 class="box-title"><span class="box-title-text">Shop by Department</span></h2>
+    <ul class="box-links">
+      <li><a href="{{ '/shop' | relative_url }}">Ready-to-Ship Items</a></li>
+      <li><a href="{{ '/commissions' | relative_url }}">Custom Commissions</a></li>
+      <li><a href="{{ '/projects' | relative_url }}">Past Projects</a></li>
+      <li><a href="{{ '/about' | relative_url }}">About the Bureau</a></li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h2 class="box-title"><span class="box-title-text">Commission Desk</span></h2>
+    <div class="box-body">
+      <p class="desk-status {% if site.commissions_open %}is-open{% else %}is-closed{% endif %}">
+        <span class="led" aria-hidden="true"></span>
+        Now <strong>{% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</strong>
+      </p>
+      {% if site.commissions_note != "" %}<p class="small">{{ site.commissions_note }}</p>{% endif %}
+      <p class="small"><a href="{{ '/commissions' | relative_url }}">{% if site.commissions_open %}Start an inquiry{% else %}Join the waitlist{% endif %} &raquo;</a></p>
+    </div>
+  </section>
+
+  <section class="box">
+    <h2 class="box-title"><span class="box-title-text">Customer Service</span></h2>
+    <div class="box-body">
+      <p class="small">Questions about an order? We reply {{ site.reply_time }}.</p>
+      <p class="small email-wrap"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </section>
+
+  {% include spotlight.html %}
+
+</aside>

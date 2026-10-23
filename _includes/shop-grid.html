@@ -1,31 +1,38 @@
 {% comment %}
-  Builds the shop from _data/shop.yml. You shouldn't need to edit this.
-{% endcomment %}
-<ul class="card-grid shop-grid">
-{% for item in site.data.shop %}
-<li class="card shop-item status-{{ item.status }}">
+  Builds product listings from _data/shop.yml. You shouldn't need to edit this.
+  Options:
+    featured=true   only show items marked featured: true
+    heading="h3"    heading level for item names (default h2)
+{% endcomment %}{% assign h = include.heading | default: "h2" %}
+<ul class="products">
+{% for item in site.data.shop %}{% if include.featured and item.featured != true %}{% continue %}{% endif %}
+<li class="product status-{{ item.status }}">
+<div class="product-photo">
 {% if item.image and item.image != "" %}
-<img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" class="card-img" loading="lazy" />
+<img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
 {% else %}
-<div class="card-img card-img-placeholder" aria-hidden="true">PHOTO<br>COMING SOON</div>
+<div class="photo-placeholder" aria-hidden="true"><span>NO IMAGE<br>AVAILABLE</span></div>
 {% endif %}
-<div class="card-body">
-<h2 class="card-title">{{ item.name }}</h2>
-<p class="card-meta">
-<span class="price">{{ item.price }}</span>
+{% if item.new %}<span class="new-burst">NEW!</span>{% endif %}
+</div>
+<div class="product-info">
+<{{ h }} class="product-name">{{ item.name }}</{{ h }}>
+<p class="product-price"><span class="label">Our Price:</span> <span class="price">{{ item.price }}</span></p>
+<p class="availability">
+<span class="label">Availability:</span>
 {% case item.status %}
-{% when "sold-out" %}<span class="badge badge-muted">SOLD OUT</span>
-{% when "coming-soon" %}<span class="badge">COMING SOON</span>
-{% else %}<span class="badge badge-on">IN STOCK</span>
+{% when "sold-out" %}<span class="avail avail-out">Sold Out</span>
+{% when "coming-soon" %}<span class="avail avail-soon">Coming Soon</span>
+{% else %}<span class="avail avail-in">In Stock</span>
 {% endcase %}
 </p>
-<p>{{ item.summary }}</p>
+<p class="product-summary">{{ item.summary }}</p>
 {% if item.details and item.details.size > 0 %}
-<ul class="card-details">
+<ul class="product-details">
 {% for d in item.details %}<li>{{ d }}</li>{% endfor %}
 </ul>
 {% endif %}
-<p class="card-actions">
+<p class="product-actions">
 {% case item.status %}
 {% when "sold-out" %}
 {% capture b %}Hi Alex,
@@ -47,7 +54,7 @@ Thanks,
 {% include email-link.html label="Join the waitlist" subject=s body=b class="btn" %}
 {% else %}
 {% if item.buy_url and item.buy_url != "" %}
-<a class="btn btn-primary" href="{{ item.buy_url }}">Buy now<span class="visually-hidden">: {{ item.name }}</span></a>
+<a class="btn btn-gold" href="{{ item.buy_url }}">Buy Now<span class="visually-hidden">: {{ item.name }}</span></a>
 {% else %}
 {% capture b %}Hi Alex,
 
@@ -58,7 +65,7 @@ Ship to (city, state/country):
 Thanks,
 {% endcapture %}
 {% capture s %}Order: {{ item.name }}{% endcapture %}
-{% include email-link.html label="Email to order" subject=s body=b class="btn btn-primary" %}
+{% include email-link.html label="Email to Order" subject=s body=b class="btn btn-gold" %}
 {% endif %}
 {% endcase %}
 </p>

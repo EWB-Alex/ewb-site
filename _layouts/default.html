@@ -5,34 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{% if page.path == 'index.md' %}Electronic Works Bureau – Custom Boutique Electronics{% else %}{{ page.title }} – Electronic Works Bureau{% endif %}</title>
   <meta name="description" content="{{ page.description | default: site.description }}" />
+  <script>
+    /* Apply a saved light/dark choice before the page draws */
+    try {
+      var t = localStorage.getItem("ewb-theme");
+      if (t === "dark" || t === "light") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
   {% include head.html %}
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <header class="site-header">
-    {% if page.path == 'index.md' %}
-    <h1 class="site-title">Electronic Works Bureau</h1>
-    {% else %}
-    <p class="site-title"><a href="{{ '/' | relative_url }}">Electronic Works Bureau</a></p>
-    {% endif %}
-    <p class="tagline">Custom Boutique Electronics</p>
-    <nav aria-label="Main">
+  <div class="page">
+
+    <div class="topbar">
+      <p>Welcome to <strong>Electronic Works Bureau</strong>! Handmade electronics from Western Washington.</p>
+      <p class="topbar-links"><span class="bookmark-tip">Press <kbd>Ctrl</kbd>+<kbd>D</kbd> to bookmark us!</span> <a href="{{ '/contact' | relative_url }}">Contact Us</a> | <a href="{{ '/commissions' | relative_url }}">Commissions: {% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</a> <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false"><span class="led" aria-hidden="true"></span>Dark mode</button></p>
+    </div>
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        var root = document.documentElement;
+        var mq = window.matchMedia ? window.matchMedia("(prefers-color-scheme: dark)") : null;
+        function isDark() {
+          var t = root.getAttribute("data-theme");
+          if (t === "dark") return true;
+          if (t === "light") return false;
+          return !!(mq && mq.matches);
+        }
+        function sync() { btn.setAttribute("aria-pressed", isDark() ? "true" : "false"); }
+        btn.addEventListener("click", function () {
+          var next = isDark() ? "light" : "dark";
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("ewb-theme", next); } catch (e) {}
+          sync();
+        });
+        if (mq && mq.addEventListener) mq.addEventListener("change", sync);
+        sync();
+      })();
+    </script>
+
+    <header class="masthead">
+      <a class="logo" href="{{ '/' | relative_url }}">
+        <span class="logo-badge" aria-hidden="true">EWB</span>
+        <div class="logo-text">
+          {% if page.path == 'index.md' %}<h1 class="logo-name">Electronic Works Bureau</h1>{% else %}<p class="logo-name">Electronic Works Bureau</p>{% endif %}
+          <p class="logo-tagline">Custom Boutique Electronics</p>
+        </div>
+      </a>
+      <div class="masthead-cta">
+        <a class="btn btn-gold" href="{{ '/shop' | relative_url }}">Shop Now &raquo;</a>
+      </div>
+    </header>
+
+    <nav class="tabs" aria-label="Main">
       <ul>
         {% for item in site.data.nav %}
         <li><a href="{{ item.url | relative_url }}"{% if page.path == item.path %} class="active" aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {% endfor %}
       </ul>
     </nav>
-  </header>
 
-  <main id="main" tabindex="-1">
-    {% unless page.path == 'index.md' %}
-    <h1>{{ page.title }}</h1>
-    {% endunless %}
-    {{ content }}
-  </main>
+    <div class="subbar">
+      <p class="breadcrumb">You are here: {% if page.path == 'index.md' %}<strong>Home</strong>{% else %}<a href="{{ '/' | relative_url }}">Home</a> &gt; <strong>{{ page.title }}</strong>{% endif %}</p>
+    </div>
 
-  {% include footer.html %}
+    {% include ticker.html %}
+
+    <div class="body-row">
+      <main id="main" tabindex="-1">
+        {% unless page.path == 'index.md' %}
+        <h1 class="page-title">{{ page.title }}</h1>
+        {% endunless %}
+        {{ content }}
+      </main>
+
+      {% include sidebar.html %}
+    </div>
+
+    {% include footer.html %}
+
+  </div>
 </body>
 </html>

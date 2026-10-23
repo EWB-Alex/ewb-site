@@ -19,3 +19,12 @@ commissions_note: ""
 
 # Typical reply time shown on the Contact page
 reply_time: "within a few days"
+
+# Scrolling announcement ticker under the tabs.
+# Add, remove, or reorder lines. Delete them all to hide the ticker.
+ticker:
+  - "Welcome to Electronic Works Bureau!"
+  - "Commissions open December 3 at noon"
+  - "10% of all proceeds go to The Trevor Project"
+  - "Handmade in Western Washington"
+  - "Thanks for stopping by!"

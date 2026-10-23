@@ -4,21 +4,25 @@
 #
 # Fields:
 #   name:     Item name (required)
-#   price:    Text shown as the price, e.g. "$45" or "From $30"
+#   price:    Text shown as the price, e.g. "$45.00" or "From $30"
 #   status:   available | sold-out | coming-soon
+#   featured: true to also show it on the Home page
+#   new:      true to stamp a red "NEW!" burst on the photo
 #   image:    Path to a photo in assets/img/shop/ (optional)
 #   alt:      Description of the photo for screen readers
 #   summary:  One or two sentences about the item
 #   details:  Short bullet list (optional)
 #   buy_url:  A checkout link (Stripe Payment Link, Etsy, etc.)
-#             Leave blank and the button becomes "Email to order"
+#             Leave blank and the button becomes "Email to Order"
 #
 # Delete the example items below when you add real ones.
 # ------------------------------------------------------------
 
 - name: Example Item One
-  price: "$45"
+  price: "$45.00"
   status: available
+  featured: true
+  new: true
   image: ""
   alt: ""
   summary: "Replace this with a short, friendly description of what it is and why someone would want it."
@@ -29,8 +33,10 @@
   buy_url: ""
 
 - name: Example Item Two
-  price: "$120"
+  price: "$120.00"
   status: coming-soon
+  featured: true
+  new: false
   image: ""
   alt: ""
   summary: "Something you're still finishing. Visitors can email to get on the waitlist."
@@ -38,8 +44,10 @@
   buy_url: ""
 
 - name: Example Item Three
-  price: "$30"
+  price: "$30.00"
   status: sold-out
+  featured: false
+  new: false
   image: ""
   alt: ""
   summary: "A one-off that already found a home. Keeping sold items up shows what you make."

@@ -1,0 +1,82 @@
+{% comment %}
+  Sidebar spotlight blocks. Content lives in _data/spotlight.yml.
+{% endcomment %}
+{% for block in site.data.spotlight %}
+{% case block.type %}
+
+{% when "counter" %}
+<section class="box box-counter" aria-label="Visitor counter">
+  <div class="box-body">
+    {% if block.above %}<p class="small">{{ block.above }}</p>{% endif %}
+    <p class="led-display" aria-hidden="true">{% assign chars = block.digits | split: "" %}{% for c in chars %}<span>{{ c }}</span>{% endfor %}</p>
+    <p class="visually-hidden">{{ block.digits }}</p>
+    {% if block.below %}<p class="small"><em>{{ block.below }}</em></p>{% endif %}
+  </div>
+</section>
+
+{% when "countdown" %}
+{% assign target_s = block.date | date: "%s" | plus: 0 %}
+{% assign now_s = site.time | date: "%s" | plus: 0 %}
+{% assign left_s = target_s | minus: now_s %}
+{% if left_s < 0 %}{% assign left_s = 0 %}{% endif %}
+{% assign d = left_s | divided_by: 86400 %}
+<section class="box box-countdown">
+  <h2 class="box-title"><span class="box-title-text">{{ block.title }}</span></h2>
+  <div class="box-body">
+    <div class="countdown" data-target="{{ block.date }}" data-done="{{ block.done_text | escape }}">
+      <ol class="cd-cells" aria-hidden="true">
+        <li><span class="cd-num" data-part="d">{{ d }}</span><span class="cd-unit">DAYS</span></li>
+        <li><span class="cd-num" data-part="h">--</span><span class="cd-unit">HRS</span></li>
+        <li><span class="cd-num" data-part="m">--</span><span class="cd-unit">MIN</span></li>
+        <li><span class="cd-num" data-part="s">--</span><span class="cd-unit">SEC</span></li>
+      </ol>
+      <p class="cd-done" hidden>{{ block.done_text }}</p>
+      <p class="visually-hidden cd-text">{{ d }} days</p>
+    </div>
+    <p class="small cd-caption">{% if block.url %}<a href="{% if block.url contains '://' %}{{ block.url }}{% else %}{{ block.url | relative_url }}{% endif %}">{{ block.caption }}</a>{% else %}{{ block.caption }}{% endif %}</p>
+  </div>
+</section>
+
+{% when "text" %}
+<section class="box box-text">
+  <h2 class="box-title"><span class="box-title-text">{{ block.title }}</span></h2>
+  <div class="box-body">
+    {% if block.name %}<p class="spot-name">{% if block.url %}<a href="{{ block.url }}">{{ block.name }}</a>{% else %}{{ block.name }}{% endif %}</p>{% endif %}
+    {% if block.text %}<p class="small">{{ block.text }}</p>{% endif %}
+  </div>
+</section>
+
+{% endcase %}
+{% endfor %}
+
+<script>
+(function () {
+  var boxes = document.querySelectorAll(".countdown[data-target]");
+  if (!boxes.length) return;
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function tick() {
+    boxes.forEach(function (box) {
+      var target = Date.parse(box.getAttribute("data-target"));
+      if (isNaN(target)) return;
+      var left = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      var d = Math.floor(left / 86400);
+      var h = Math.floor((left % 86400) / 3600);
+      var m = Math.floor((left % 3600) / 60);
+      var s = left % 60;
+      if (left === 0) {
+        box.querySelector(".cd-cells").hidden = true;
+        box.querySelector(".cd-done").hidden = false;
+        box.querySelector(".cd-text").textContent = box.getAttribute("data-done");
+        return;
+      }
+      box.querySelector('[data-part="d"]').textContent = d;
+      box.querySelector('[data-part="h"]').textContent = pad(h);
+      box.querySelector('[data-part="m"]').textContent = pad(m);
+      box.querySelector('[data-part="s"]').textContent = pad(s);
+      box.querySelector(".cd-text").textContent = d + " days, " + h + " hours, " + m + " minutes";
+    });
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+</script>

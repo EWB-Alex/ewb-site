@@ -2,8 +2,8 @@
   Commission status box. Controlled by commissions_open and
   commissions_note in _config.yml.
 {% endcomment %}
-<div class="status-box {% if site.commissions_open %}status-open{% else %}status-closed{% endif %}">
-<p class="status-line"><span aria-hidden="true">{% if site.commissions_open %}●{% else %}○{% endif %}</span> Commissions are <strong>{% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</strong></p>
-{% if site.commissions_note != "" %}<p class="status-note">{{ site.commissions_note }}</p>{% endif %}
-{% unless include.no_link %}<p class="status-link"><a href="{{ '/commissions' | relative_url }}">{% if site.commissions_open %}How commissions work{% else %}Get notified when they open{% endif %}</a></p>{% endunless %}
+<div class="notice {% if site.commissions_open %}notice-open{% else %}notice-closed{% endif %}">
+<p class="notice-line"><span class="led" aria-hidden="true"></span> Commissions are <strong>{% if site.commissions_open %}OPEN{% else %}CLOSED{% endif %}</strong></p>
+{% if site.commissions_note != "" %}<p class="notice-note">{{ site.commissions_note }}</p>{% endif %}
+{% unless include.no_link %}<p class="notice-link"><a href="{{ '/commissions' | relative_url }}">{% if site.commissions_open %}How commissions work &raquo;{% else %}Get notified when they open &raquo;{% endif %}</a></p>{% endunless %}
 </div>
