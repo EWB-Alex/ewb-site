@@ -3,4 +3,6 @@ layout: default
 title: Projects
 ---
 
-Project details coming soon. Commissions are currently closed.
+Project details coming soon.
+
+{% include commission-status.html %}

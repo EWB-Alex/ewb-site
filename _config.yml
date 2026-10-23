@@ -2,3 +2,20 @@ title: Electronic Works Bureau
 description: Custom Boutique Electronics
 baseurl: "" # for root site
 url: "https://electronicworksbureau.com"
+
+# ------------------------------------------------------------
+# SITE SETTINGS: change these and every page updates
+# ------------------------------------------------------------
+
+# Where all inquiry buttons send email
+email: alex@electronicworksbureau.com
+
+# Commissions switch: true = open, false = closed
+commissions_open: false
+
+# Optional one-line note shown with the commission status
+# e.g. "Booking for January 2027" or "Reopening in spring"
+commissions_note: ""
+
+# Typical reply time shown on the Contact page
+reply_time: "within a few days"
