@@ -1467,3 +1467,52 @@ main h2:not(.product-name)::before {
     #5bcefa 80% 100%
   );
 }
+
+/* ---------- Gem bullets (vintage mineral plate illustrations) ---------- */
+.page-text ul,
+.product-details,
+.welcome ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.page-text ul li,
+.product-details li,
+.welcome ul li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 4px;
+}
+
+.page-text ul li::before,
+.product-details li::before,
+.welcome ul li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.2em;
+  width: 17px;
+  height: 17px;
+  background: url("assets/img/bullets/gem-citrine.png") center / contain no-repeat;
+}
+
+.product-details li {
+  padding-left: 22px;
+}
+
+.product-details li::before {
+  width: 14px;
+  height: 14px;
+}
+
+.page-text ul li:nth-child(3n+2)::before,
+.product-details li:nth-child(3n+2)::before,
+.welcome ul li:nth-child(3n+2)::before {
+  background-image: url("assets/img/bullets/gem-octahedron.png");
+}
+
+.page-text ul li:nth-child(3n)::before,
+.product-details li:nth-child(3n)::before,
+.welcome ul li:nth-child(3n)::before {
+  background-image: url("assets/img/bullets/gem-oval.png");
+}
