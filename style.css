@@ -64,13 +64,8 @@ body {
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.55;
-  /* Tiled "desktop" pattern */
-  background-color: var(--desk);
-  background-image:
-    linear-gradient(45deg, var(--desk-line) 25%, transparent 25%, transparent 75%, var(--desk-line) 75%),
-    linear-gradient(45deg, var(--desk-line) 25%, transparent 25%, transparent 75%, var(--desk-line) 75%);
-  background-size: 24px 24px;
-  background-position: 0 0, 12px 12px;
+  /* Plain background */
+  background: var(--desk);
 }
 
 img {
@@ -1039,18 +1034,6 @@ main .button-list > li {
    EXTRA 90s
    ============================================================ */
 
-/* Circuit-board tiled background: traces on a grid with solder pads */
-body {
-  background-color: var(--desk);
-  background-image:
-    radial-gradient(circle at 20px 20px, #d8c27a 0 3px, var(--desk-line) 3px 5px, transparent 5.5px),
-    linear-gradient(90deg, transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-    linear-gradient(transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-    linear-gradient(45deg, transparent 48.5%, rgba(255, 255, 255, 0.25) 48.5% 51.5%, transparent 51.5%);
-  background-size: 40px 40px, 40px 40px, 40px 40px, 80px 80px;
-  background-position: 0 0, 0 0, 0 0, 0 0;
-}
-
 /* WordArt-style 3D logo */
 .logo-name {
   color: #1d8a3f;
@@ -1307,13 +1290,6 @@ main h2:not(.product-name)::before {
     --link-hover: #ffffff;
     color-scheme: dark;
   }
-  :root:not([data-theme="light"]) body {
-    background-image:
-      radial-gradient(circle at 20px 20px, #6b5e2a 0 3px, var(--desk-line) 3px 5px, transparent 5.5px),
-      linear-gradient(90deg, transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-      linear-gradient(transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-      linear-gradient(45deg, transparent 48.5%, rgba(255, 255, 255, 0.04) 48.5% 51.5%, transparent 51.5%);
-  }
   :root:not([data-theme="light"]) a:focus-visible, :root:not([data-theme="light"]) button:focus-visible {
     outline-color: #ffe14a;
     background-color: #3a3300;
@@ -1379,13 +1355,6 @@ main h2:not(.product-name)::before {
   color-scheme: dark;
 }
 
-:root[data-theme="dark"] body {
-  background-image:
-    radial-gradient(circle at 20px 20px, #6b5e2a 0 3px, var(--desk-line) 3px 5px, transparent 5.5px),
-    linear-gradient(90deg, transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-    linear-gradient(transparent 19px, var(--desk-line) 19px 21px, transparent 21px),
-    linear-gradient(45deg, transparent 48.5%, rgba(255, 255, 255, 0.04) 48.5% 51.5%, transparent 51.5%);
-}
 :root[data-theme="dark"] a:focus-visible, :root[data-theme="dark"] button:focus-visible {
   outline-color: #ffe14a;
   background-color: #3a3300;
