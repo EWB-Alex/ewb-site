@@ -1,14 +1,13 @@
 ---
-layout: default
 title: Shop
+layout: default
 description: Handmade electronics from Electronic Works Bureau, ready to ship.
-intro: >-
-  Small-batch devices, built and tested by hand. When something sells out, it
-  may come back, so feel free to ask.
+intro: Small-batch devices, built and tested by hand. When something sells out,
+  it may come back, so feel free to ask.
 ---
 ## How ordering works
 
-**Paying:** Items with a **Buy Now** button go to a secure checkout. For items marked **Email to Order**, send a quick email and you'll get a payment link back.
+**Paying:** For items marked **Email to Order**, send a quick email and you'll get an invoice with a payment link back.
 
 **Shipping:** Orders ship from Western Washington, usually within a week. You'll get tracking by email.
 
