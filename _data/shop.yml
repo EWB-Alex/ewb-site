@@ -3,13 +3,16 @@
   status: coming-soon
   featured: true
   new: true
-  summary: An RP2350 based board that acts as a 2 way communication device between
-    Wheelwriter 3,5 and 6s and the internet. Can be used with a default firmware
-    but designed as a hardware tool for hobbyists.
+  summary: An RP2350-based board that connects IBM Wheelwriter 3, 5, and 6
+    typewriters to the internet for two-way communication. The default firmware
+    prints weather, news, and daily facts using free data sources, while the
+    open hardware invites hobbyists to build their own projects.
   details:
-    - Pico 2 W carrier board (pico 2 w included.
-    - Powered from the Wheelwriter's 5v supply
+    - Pico 2 W carrier board (Pico 2 W included)
+    - Powered by the Wheelwriter’s 5V supply
     - Plug and Play with default firmware
+    - Prints weather, news, and more
+    - Open for custom firmware and tinkering
 - name: The Baseball Device
   price: TBA
   status: coming-soon
