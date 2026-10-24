@@ -1,44 +1,11 @@
-# ------------------------------------------------------------
-# SIDEBAR SPOTLIGHT BLOCKS
-# The boxes at the bottom of the sidebar, in this order.
-# Edit, reorder, or swap these any time.
-#
-# Block types:
-#   countdown  Live countdown clock
-#              title: box heading
-#              date:  target, "YYYY-MM-DDTHH:MM:SS-08:00"
-#                     (-07:00 = Pacific Daylight, mid-Mar to early Nov)
-#                     (-08:00 = Pacific Standard, early Nov to mid-Mar)
-#              caption: text under the clock
-#              url:   optional link for the caption
-#              done_text: shown once the date passes
-#
-#   text       A heading, an optional link, and a sentence
-#              title: box heading
-#              name:  bold name (linked if url is set)
-#              url:   link for the name (optional)
-#              text:  sentence under it
-#
-#   counter    Retro visitor counter (not currently used)
-#              digits: what the counter shows
-#              above / below: small text over and under it
-# ------------------------------------------------------------
-
 - type: countdown
-  title: "Commissions Open In"
-  date: "2026-12-03T12:00:00-08:00"
-  caption: "December 3 at noon (Pacific)"
-  url: "/commissions"
-  done_text: "NOW OPEN!"
-
+  title: Commissions Open In
+  date: 2026-12-03T12:00:00-08:00
+  caption: December 3 at noon (Pacific)
+  done_text: NOW OPEN!
+  url: /commissions
 - type: countdown
-  title: "Countdown to Baseball"
-  date: "2027-03-24T00:00:00-07:00"
-  caption: "until MLB Opening Night, March 24, 2027"
-  done_text: "PLAY BALL!"
-
-- type: text
-  title: "Charity of the Month"
-  name: "The Trevor Project"
-  url: "https://www.thetrevorproject.org/"
-  text: "10% of all proceeds are donated."
+  title: Countdown to Baseball
+  date: 2027-03-24T00:00:00-07:00
+  caption: until MLB Opening Night, March 24, 2027
+  done_text: PLAY BALL!
