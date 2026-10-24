@@ -1,55 +1,18 @@
-# ------------------------------------------------------------
-# SHOP ITEMS
-# Add one block per item. The Shop page builds itself from this.
-#
-# Fields:
-#   name:     Item name (required)
-#   price:    Text shown as the price, e.g. "$45.00" or "From $30"
-#   status:   available | sold-out | coming-soon
-#   featured: true to also show it on the Home page
-#   new:      true to stamp a red "NEW!" burst on the photo
-#   image:    Path to a photo in assets/img/shop/ (optional)
-#   alt:      Description of the photo for screen readers
-#   summary:  One or two sentences about the item
-#   details:  Short bullet list (optional)
-#   buy_url:  A checkout link (Stripe Payment Link, Etsy, etc.)
-#             Leave blank and the button becomes "Email to Order"
-#
-# Delete the example items below when you add real ones.
-# ------------------------------------------------------------
-
-- name: Example Item One
-  price: "$45.00"
-  status: available
+- name: Wheelwriter Wi-Fi Bridge
+  price: $59.99
+  status: coming-soon
   featured: true
   new: true
-  image: ""
-  alt: ""
-  summary: "Replace this with a short, friendly description of what it is and why someone would want it."
+  summary: An RP2350 based board that acts as a 2 way communication device between
+    Wheelwriter 3,5 and 6s and the internet. Can be used with a default firmware
+    but designed as a hardware tool for hobbyists.
   details:
-    - "What's in the box"
-    - "How it's powered"
-    - "Ships in about a week"
-  buy_url: ""
-
-- name: Example Item Two
-  price: "$120.00"
+    - Pico 2 W carrier board (pico 2 w included.
+    - Powered from the Wheelwriter's 5v supply
+    - Plug and Play with default firmware
+- name: The Baseball Device
+  price: $250
   status: coming-soon
   featured: true
   new: false
-  image: ""
-  alt: ""
-  summary: "Something you're still finishing. Visitors can email to get on the waitlist."
-  details: []
-  buy_url: ""
-
-- name: Example Item Three
-  price: "$30.00"
-  status: sold-out
-  featured: false
-  new: false
-  image: ""
-  alt: ""
-  summary: "A one-off that already found a home. Keeping sold items up shows what you make."
-  details: []
-  buy_url: ""
+  summary: Announcement in Early 2027.
